@@ -1,46 +1,75 @@
-# Getting Started with Create React App
+# Brand Orders
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+Your team is building an admin app to track orders for different brands.
 
-In the project directory, you can run:
+You will be writing React code to display order information, and adding some basic controls for data manipulation.
 
-### `npm start`
+Use this starting list of brands:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+[
+    {
+      name: "Matter",
+      orders: [
+        {
+          date: "2023-01-20T22:11:43.452Z",
+          price: 100
+        }
+      ]
+    },
+    {
+      name: "Uncoil",
+      orders: [
+        {
+          date: "2022-07-02T09:21:22.222Z",
+          price: 95
+        }
+      ]
+    },
+    {
+      name: "Strawhouse",
+      orders: [
+        {
+          date: "2009-10-31T12:00:01.000Z",
+          price: 51
+        }
+      ]
+    }
+  ]
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Step 1
 
-### `npm test`
+Your starting point is `src/App.jsx`. Using the provided list of brands, render a list of brand names.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Step 2
 
-### `npm run build`
+Render a list of orders (displaying name and date) for each brand.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Step 3
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Provide the ability to add a new brand.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Step 4
 
-### `npm run eject`
+Provide the ability to add an order to a brand.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🍬Nice-to-haves (optional)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+_(in no particular order)_
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Provide the ability to remove an order.
+- Provide the ability to remove a brand.
+- Write Jest unit tests for your code.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+## 📓Notes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Make sure that your code is presentable because you will be presenting it!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Please feel free to ask any questions you may have as you go. We are here to see you at your best and clarifications are encouraged and welcome.
+
+---
