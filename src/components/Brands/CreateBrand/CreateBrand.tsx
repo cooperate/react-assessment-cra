@@ -1,13 +1,15 @@
 import React, { useState, useContext } from "react";
 import AddBrandButton from "../AddBrandButton/AddBrandButton";
+import styled from '@emotion/styled';
+import { Card, Form } from "../../../App";
 
 const CreateBrand: React.FC = () => {
   const [brandName, setBrandName] = useState<string>("");
 
   return (
-    <div>
+    <Card>
       <h3>Create Brand</h3>
-      <form onSubmit={(e) => e?.preventDefault()}>
+      <Form onSubmit={(e) => e?.preventDefault()}>
         <label htmlFor="brand-name">Brand Name:</label>
         <input
           type="text"
@@ -16,8 +18,8 @@ const CreateBrand: React.FC = () => {
           onChange={(e) => setBrandName(e.target.value)}
         />
         <AddBrandButton brandName={brandName} />
-      </form>
-    </div>
+      </Form>
+    </Card>
   );
 };
 

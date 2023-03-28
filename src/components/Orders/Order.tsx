@@ -1,6 +1,7 @@
 import { useContext } from "react";
+import { FlatCard, DescriptorText } from "../../App";
 import { OrderContext } from "../../contexts";
-import { Brand, Order as OrderType } from "../../types";
+import { Order as OrderType } from "../../types";
 import RemoveOrderButton from "./RemoveOrderButton/RemoveOrderButton";
 
 type OrderProps = {
@@ -10,16 +11,20 @@ type OrderProps = {
 
 const Order = ({ order, children }: OrderProps) => (
   <OrderContext.Provider value={order}>
-    <div className="order-card">
+    <FlatCard>
+      <h4>Order ID {order.id}</h4>
       {children}
       <RemoveOrderButton orderId={order.id} />
-    </div>
+    </FlatCard>
   </OrderContext.Provider>
 );
 
 const OrderPrice = () => {
   const order = useContext(OrderContext);
-  return <p>{order.price}</p>;
+  const formatPrice = (price: number) => {
+    return `$${price.toFixed(2)}`;
+  };
+  return <div><DescriptorText>Price</DescriptorText>{formatPrice(order.price)}</div>;
 };
 
 const OrderDate = () => {
@@ -28,7 +33,7 @@ const OrderDate = () => {
   const renderHumanReadableDate = (date: Date) => {
     return date.toLocaleDateString();
   };
-  return <p>{renderHumanReadableDate(date)}</p>;
+  return <div><DescriptorText>Date</DescriptorText>{renderHumanReadableDate(date)}</div>;
 };
 
 export { Order, OrderPrice, OrderDate };
