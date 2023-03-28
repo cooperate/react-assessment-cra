@@ -1,6 +1,5 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import AddBrandButton from "../AddBrandButton/AddBrandButton";
-import styled from '@emotion/styled';
 import { Card, Form } from "../../../App";
 
 const CreateBrand: React.FC = () => {
