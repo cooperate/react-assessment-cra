@@ -1,5 +1,6 @@
 export interface Order {
-    date: string;
+    id: number;
+    date: Date;
     price: number;
   }
   

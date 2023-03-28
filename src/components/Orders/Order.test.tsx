@@ -4,12 +4,13 @@ import { Order, OrderPrice, OrderDate } from './Order';
 
 describe('Order', () => {
   const myOrder = {
+    id: 1,
     price: 10.99,
-    date: '2023-03-25',
+    date: new Date('2023-03-25'),
   };
 
   it('renders the order price', () => {
-    const { getByText } = render(
+    render(
       <Order order={myOrder}>
         <OrderPrice />
       </Order>
@@ -18,11 +19,11 @@ describe('Order', () => {
   });
 
   it('renders the order date', () => {
-    const { getByText } = render(
+    render(
       <Order order={myOrder}>
         <OrderDate />
       </Order>
     );
-    expect(screen.getByText(myOrder.date)).toBeInTheDocument();
+    expect(screen.getByText(new Date(myOrder.date).toLocaleDateString())).toBeInTheDocument();
   });
 });

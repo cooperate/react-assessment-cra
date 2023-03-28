@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
-import { BrandContext } from '../../contexts';
+import { BrandsContext } from '../../contexts';
 import { Order, OrderDate, OrderPrice } from '../Orders/Order';
 import { Brand as BrandType, Order as OrderType } from '../../types';
+import RemoveBrandButton from './RemoveBrandButton/RemoveBrandButton';
 
 interface BrandProps {
   brand: BrandType;
@@ -11,6 +12,7 @@ const Brand: React.FC<BrandProps> = ({ brand }) => {
   return (
     <div>
       <h3>{brand.name}</h3>
+      <RemoveBrandButton brandName={brand.name} />
       <div>
         {brand.orders.map((order: OrderType, index) => (
           <Order order={order} key={index}>
@@ -24,7 +26,7 @@ const Brand: React.FC<BrandProps> = ({ brand }) => {
 };
 
 export const Brands: React.FC = () => {
-  const brands: BrandType[] = useContext(BrandContext);
+  const brands = useContext(BrandsContext);
 
   return (
     <div>
